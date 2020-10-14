@@ -1,0 +1,9 @@
+
+
+*/.directory
+**/*.directory
+
+
+**/.idea/
+**/obj/
+**/bin/

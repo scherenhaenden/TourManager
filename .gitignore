@@ -4,6 +4,7 @@
 
 #Intellij directory
 **/.idea/
+*/.idea/
 
 #Dotnetcore directories
 **/obj/
@@ -11,3 +12,12 @@
 
 #npm directories
 **/node_modules/
+
+#ng build directory
+TourManagerUI/dist/
+
+
+**/wwwroot/
+*/.idea/.idea.TourManagerBackEnd/.idea/contentModel.xml
+TourManagerBackEnd/.idea/*
+TourManagerBackEnd/.idea/.idea.TourManagerBackEnd/.idea/workspace.xml

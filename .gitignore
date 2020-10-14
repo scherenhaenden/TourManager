@@ -1,9 +1,13 @@
-
-
+#Kubuntu directory
 */.directory
 **/*.directory
 
-
+#Intellij directory
 **/.idea/
+
+#Dotnetcore directories
 **/obj/
 **/bin/
+
+#npm directories
+**/node_modules/

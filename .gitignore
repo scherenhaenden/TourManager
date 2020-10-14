@@ -1,9 +1,24 @@
-
-
+#Kubuntu directory
 */.directory
 **/*.directory
 
-
+#Intellij directory
 **/.idea/
+*/.idea/
+
+#Dotnetcore directories
 **/obj/
 **/bin/
+
+#npm directories
+**/node_modules/
+
+#ng build directory
+TourManagerUI/dist/
+
+
+**/wwwroot/
+*/.idea/.idea.TourManagerBackEnd/.idea/contentModel.xml
+TourManagerBackEnd/.idea/*
+
+

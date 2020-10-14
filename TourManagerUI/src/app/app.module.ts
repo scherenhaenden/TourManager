@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VenuesModule } from './views/venues/venues.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent
@@ -10,7 +11,8 @@ import { VenuesModule } from './views/venues/venues.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    VenuesModule
+    VenuesModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

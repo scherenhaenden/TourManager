@@ -8,5 +8,9 @@
       <PackageReference Include="ElectronNET.API" Version="9.31.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="www" />
+    </ItemGroup>
+
 
 </Project>

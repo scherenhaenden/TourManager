@@ -4,6 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VenuesModule } from './views/venues/venues.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedComponentsModule } from './views/shared-components/shared-components.module';
+import { RouterModule } from '@angular/router';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +16,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     VenuesModule,
-    NgbModule
+    NgbModule,
+    SharedComponentsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,22 @@
-<main>  
-   <router-outlet></router-outlet>
+<main>
+   <div class="main-container row w-100 h-100">
+      <div class="wrapper-containers">
+         <div class="row top-container">
+            <div class="row">
+               <div class="col-12">
+                  <app-main-nav></app-main-nav>
+               </div>
+            </div>
+         </div>
+         <div class="left-container">
+         </div>
+         <div class="center-container">
+            <router-outlet></router-outlet>
+         </div>
+         <div class="right-container">
+         </div>
+         <div class="bottom-container">
+         </div>
+      </div>
+   </div>
 </main>
-

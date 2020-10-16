@@ -1,6 +1,7 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, Version } from '@angular/core';
-import { VenuewsModels } from './../../../models/venues/venues-model';
+import { VenuesModels } from './../../../models/venues/venues-model';
+import { VenuesService } from './../../../services/venues-service';
 
 @Component({
   selector: 'app-show-venues',
@@ -8,15 +9,13 @@ import { VenuewsModels } from './../../../models/venues/venues-model';
   styleUrls: ['./show-venues.component.less']
 })
 
-
-
 export class ShowVenuesComponent implements OnInit {
 
-  public venuewsModels: VenuewsModels = new VenuewsModels();
+  public venuewsModels: VenuesModels = new VenuesModels();
 
   public listFlatModels: FlatModel[] = [];
 
-  constructor() {
+  constructor(private venuesService: VenuesService) {
     this.loadVenue();
   }
 
@@ -46,6 +45,10 @@ export class ShowVenuesComponent implements OnInit {
   public updateValue(value: string, propertyToUpdate: string): void {
 
     this.venuewsModels[propertyToUpdate.toLocaleLowerCase()] = value;
+  }
+
+  public async saveInsertedInfo(): Promise<void>{    
+    var resilt = this.venuesService.addNewVenue(this.venuewsModels);
   }
 }
 

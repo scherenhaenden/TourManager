@@ -1,60 +1,17 @@
-
 <div class="row">
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-6">
-				Name
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				Address
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				Number
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				Contact Persons
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				Load in
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-				Curf view
-				</div>
-				<div class="col-md-6">
-					<input type="text" />
-				</div>
-			</div>
-		</div>
-	</div>
+   <div class="container-fluid">
+      <div class="row form-group">
+         <div class="col-md-12">
+
+		 <ng-container *ngFor="let item of listFlatModels; index as i;">
+		 	<div class="row ml-0 mr-0">
+               <app-property-input-formular class=" w-100 ml-0 mr-0 mt-1 mb-1" [propertyName]="item.propertyNameOfObject" [propertyValue]="item.propertyValueOfObject"
+			   (propertyValueEmit)="updateValue($event,item.propertyNameOfObject)"
+			    ></app-property-input-formular>
+            </div>
+
+		 </ng-container>			                                   
+         </div>
+      </div>
+   </div>
 </div>
-
-</div>
-
-

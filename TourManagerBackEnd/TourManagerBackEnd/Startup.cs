@@ -1,7 +1,9 @@
 using System.Threading.Tasks;
+using Data.Core.Configuration;
 using ElectronNET.API;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +31,7 @@ namespace TourManagerBackEnd
             {
                 configuration.RootPath = "wwwroot";
             });
+            services.AddDbContext<TourManagerContext>(x => x.UseSqlite("Data Source=TourManager.db;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,11 @@
-$HEADER$namespace $NAMESPACE$
+using System;
+
+namespace Data.Core.Domain
 {
-  public class $CLASS$ {$END$}
+    public class TEntity
+    {
+        public int Id { get; set; }
+        public DateTime Inserted { get; set; }
+        public DateTime LastUpdate { get; set; }
+    }
 }

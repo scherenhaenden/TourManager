@@ -13,10 +13,10 @@ namespace Data.Core.Configuration
             Database.Migrate();
         }
         
-        public TourManagerContext () : base()
+        /*public TourManagerContext () : base()
         {
-            //Database.Migrate();
-        }
+            Database.Migrate();
+        }*/
         
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {           

@@ -1,4 +1,4 @@
-export class VenuewsModels {
+export class VenuesModels {
     public id = 0;
     public name = '';
     public address = '';

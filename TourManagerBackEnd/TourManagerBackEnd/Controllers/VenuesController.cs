@@ -25,8 +25,7 @@ namespace TourManagerBackEnd.Controllers
         [HttpPost]
         [Route("addvenue")]
         public dynamic AddVenue(VenueModel values)
-        {
-            
+        {            
             var Venues = new Venues();
 
             Venues.Address = values.Address;

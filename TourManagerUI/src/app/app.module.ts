@@ -6,6 +6,8 @@ import { VenuesModule } from './views/venues/venues.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedComponentsModule } from './views/shared-components/shared-components.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { GenericApiService } from './services/generic-api-service';
 
 
 @NgModule({
@@ -18,9 +20,10 @@ import { RouterModule } from '@angular/router';
     VenuesModule,
     NgbModule,
     SharedComponentsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GenericApiService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

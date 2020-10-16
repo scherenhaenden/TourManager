@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VenueInformationComponent } from './venue-information/venue-information.component';
 import { SharedComponentsModule } from '../shared-components/shared-components.module';
 import { FormsModule } from '@angular/forms';
+import { VenuesService } from './../../services/venues-service';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     SharedComponentsModule,
     FormsModule
-  ]
+  ],
+  providers: [VenuesService],
 })
 export class VenuesModule { }

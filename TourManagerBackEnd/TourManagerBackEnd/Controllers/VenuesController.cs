@@ -1,6 +1,9 @@
+using System;
 using Data.Core.Configuration;
+using Data.Core.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TourManagerBackEnd.ApiModels;
 
 namespace TourManagerBackEnd.Controllers
 {
@@ -21,9 +24,21 @@ namespace TourManagerBackEnd.Controllers
         [AllowAnonymous]
         [HttpPost]
         [Route("addvenue")]
-        public void AddVenue(dynamic values)
+        public dynamic AddVenue(VenueModel values)
         {
             
+            var Venues = new Venues();
+
+            Venues.Address = values.Address;
+            Venues.contactPersons = values.ContactPersons;
+            Venues.curfView = DateTime.Now;
+            Venues.loadIn = DateTime.Now;
+            values.Name = values.Name;
+            values.Number = values.Number;
+
+            _tourManagerContext.Venues.Add(Venues);
+            _tourManagerContext.SaveChanges();
+            return values;
         }
     }
 }

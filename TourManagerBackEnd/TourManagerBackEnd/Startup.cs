@@ -26,7 +26,9 @@ namespace TourManagerBackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddCors();
+            services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);;
+            services.AddHttpClient();   
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "wwwroot";
@@ -37,21 +39,30 @@ namespace TourManagerBackEnd
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(builder => builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed((host) => true)
+                .AllowCredentials()
+            );
+            app.UseCorsMiddleware();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
             
             app.UseSpaStaticFiles();
-            app.UseSpa(spa => { spa.Options.SourcePath = "wwwroot"; });
+            //app.UseSpa(spa => { spa.Options.SourcePath = "wwwroot"; });
+            
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
             
             Task.Run(async () => await Electron.WindowManager.CreateWindowAsync());
         }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -13,9 +13,30 @@ export class MainNavComponent implements OnInit {
   public StateOfButtons = StateButtons;
 
 
-  constructor(private route: Router) {
+  constructor(private router: Router) {
 
-    console.log('the.route', this.route.url);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+          // Show loading indicator
+          this.changeRouterNaveState(event.url);
+      }
+
+      if (event instanceof NavigationEnd) {
+          // Hide loading indicator
+      }
+
+      if (event instanceof NavigationError) {
+          // Hide loading indicator
+
+          // Present error to user
+          console.log(event.error);
+      }
+      else{
+        console.log('router event:', event);
+      }
+  });
+
+    console.log('the.route', this.router.url);
     
 
   }
@@ -30,6 +51,17 @@ export class MainNavComponent implements OnInit {
   public menuClicked(stateCliked: StateButtons): void {
 
     this.currentState = stateCliked;
+
+  }
+
+  public changeRouterNaveState(url: string): void {
+
+    console.log('minimi', url);
+    if(url.includes('venues')) {
+
+      this.currentState = StateButtons.Venues;
+
+    }
 
   }
 }

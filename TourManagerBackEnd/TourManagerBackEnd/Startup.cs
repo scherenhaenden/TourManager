@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
+
 //using Microsoft.EntityFrameworkCore;
 
 //using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
@@ -27,7 +29,12 @@ namespace TourManagerBackEnd
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);;
+            //services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
+
             services.AddHttpClient();   
             services.AddSpaStaticFiles(configuration =>
             {

@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VenuesModule } from './views/venues/venues.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedComponentsModule } from './views/shared-components/shared-components.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { GenericApiService } from './services/generic-api-service';
 
 
 @NgModule({
@@ -18,9 +20,11 @@ import { RouterModule } from '@angular/router';
     VenuesModule,
     NgbModule,
     SharedComponentsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [GenericApiService],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

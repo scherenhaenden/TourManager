@@ -1,5 +1,7 @@
+import { Route } from '@angular/compiler/src/core';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, Version } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VenuesModels } from './../../../models/venues/venues-model';
 import { VenuesService } from './../../../services/venues-service';
 
@@ -11,48 +13,72 @@ import { VenuesService } from './../../../services/venues-service';
 
 export class ShowVenuesComponent implements OnInit {
 
-  public venuewsModels: VenuesModels = new VenuesModels();
 
-  public listFlatModels: FlatModel[] = [];
+  public listOFVenuewsModels: VenuesModels[] = [];
+  public rowEntered = null;
 
-  constructor(private venuesService: VenuesService) {
-    this.loadVenue();
+
+  constructor(private venuesService: VenuesService
+            , private router: Router
+
+              ) {
+    this.loadVenues();
   }
 
   ngOnInit(): void {
   }
 
-  public loadVenue(): void {
+  public mouseEnterRow(that: object): void{
 
-    const keys = Object.keys(this.venuewsModels);
-    const keysWithoutId =  keys.filter(key => key !== 'id');
+    this.rowEntered = that;
+  }
 
-    for (const i in keysWithoutId) {
+  public mouseLeaveRow(that: object): void {
 
-      if (keysWithoutId.hasOwnProperty(i)) {
-        // code here
-        const flat = new FlatModel();
-        let name = keysWithoutId[i];
-
-        name = name.charAt(0).toUpperCase() + name.slice(1);
-        flat.propertyNameOfObject = name;
-        flat.propertyValueOfObject = this.venuewsModels[i];
-        this.listFlatModels.push(flat);
-      }
+    if (this.rowEntered === that) {
+    this.rowEntered = null;
     }
   }
 
-  public updateValue(value: string, propertyToUpdate: string): void {
+  public async loadVenues(): Promise<void>  {
 
-    this.venuewsModels[propertyToUpdate.toLocaleLowerCase()] = value;
+    const value = await this.venuesService.showvenues<VenuesModels[]>();
+    this.listOFVenuewsModels = value;
+
+    console.log('myInfo', value);
+
   }
 
-  public async saveInsertedInfo(): Promise<void>{    
-    var resilt = this.venuesService.addNewVenue(this.venuewsModels);
+  public formatTime(date: any): string {
+    const myNewDate = this.sCdateToJsDate(date);
+    return myNewDate.toLocaleTimeString();
   }
+
+  public addNewVenue(): void {
+
+     this.router.navigate(['./edit-venues']);
+  }
+
+  // FIXME: decouple this
+  public sCdateToJsDate(cSDate: any): Date {
+    // cSDate is '2017-01-24T14:14:55.807'
+    const datestr = cSDate.toString();
+    const dateAr = datestr.split('-');
+    // tslint:disable-next-line:radix
+    const year = parseInt(dateAr[0]);
+    // tslint:disable-next-line:radix
+    const month = parseInt(dateAr[1]) - 1;
+    // tslint:disable-next-line:radix
+    const day = parseInt(dateAr[2].substring(0, dateAr[2].indexOf('T')));
+    const timestring = dateAr[2].substring(dateAr[2].indexOf('T') + 1);
+    const timeAr = timestring.split(':');
+    // tslint:disable-next-line:radix
+    const hour = parseInt(timeAr[0]);
+    // tslint:disable-next-line:radix
+    const min = parseInt(timeAr[1]);
+    // tslint:disable-next-line:radix
+    const sek = parseInt(timeAr[2]);
+    const date = new Date(year, month, day, hour, min, sek, 0);
+    return date;
 }
-
-export class FlatModel{
-  public propertyNameOfObject: string;
-  public propertyValueOfObject: string;
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Data.Core.Configuration;
 using Data.Core.Domain;
 using Microsoft.AspNetCore.Authorization;
@@ -19,7 +20,15 @@ namespace TourManagerBackEnd.Controllers
         {
             _tourManagerContext = tourManagerContext;            
         }
-
+        
+        
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("showvenues")]
+        public dynamic ShowVenues()
+        {
+            return _tourManagerContext.Venues.ToList();
+        }
 
         [AllowAnonymous]
         [HttpPost]

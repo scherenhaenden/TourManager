@@ -4,6 +4,6 @@ export class VenuesModels {
     public address = '';
     public number = '';
     public contactPersons = '';
-    public loadIn = '';
-    public curfView = '';
+    public loadIn: Date = new Date();
+    public curfView: Date = new Date();
 }

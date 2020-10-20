@@ -12,17 +12,17 @@ export class GenericApiService {
 
   constructor(
     private http: HttpClient
-   
+
 
 ) {  }
 
 
-  public GenericGet<T> (url: string, httpOptions?: HttpHeaders): Observable<T> {
+  public GenericGet<T>(url: string, httpOptions?: HttpHeaders): Observable<T> {
 
     const httpOptionsNew = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        //Authorization: 'Bearer ' + this.authenticationService.getJWTDeCypherd(this.authenticationService.getBearer())
+        // Authorization: 'Bearer ' + this.authenticationService.getJWTDeCypherd(this.authenticationService.getBearer())
       }),
     };
 
@@ -33,12 +33,12 @@ export class GenericApiService {
     );
   }
 
-  public GenericPost<T> (url: string, model: T, httpOptions?: HttpHeaders, httpParams?: HttpParams): Observable<T> {
+  public GenericPost<T>(url: string, model: T, httpOptions?: HttpHeaders, httpParams?: HttpParams): Observable<T> {
 
     const httpOptionsNew = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        //Authorization: 'Bearer ' + this.authenticationService.getJWTDeCypherd(this.authenticationService.getBearer())
+        // Authorization: 'Bearer ' + this.authenticationService.getJWTDeCypherd(this.authenticationService.getBearer())
       }),
       httpParams
     };
@@ -50,8 +50,6 @@ export class GenericApiService {
       catchError(this.handleError)
     );
   }
-
-
 
 
   private handleError(error: HttpErrorResponse, value: any) {

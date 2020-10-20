@@ -11,7 +11,6 @@ export class MainNavComponent implements OnInit {
   public currentState: StateButtons = StateButtons.UserInformation;
   public StateOfButtons = StateButtons;
 
-  
 
   constructor() { }
 
@@ -30,9 +29,9 @@ export class MainNavComponent implements OnInit {
 }
 
 export enum StateButtons {
-  UserInformation, 
-  Summary, 
-  Venues, 
+  UserInformation,
+  Summary,
+  Venues,
   Days
-  
+
 }

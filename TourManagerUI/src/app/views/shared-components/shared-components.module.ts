@@ -7,7 +7,6 @@ import { PropertyInputFormularComponent } from './formular-components/property-i
 import { FormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [MainNavComponent, PropertyInputFormularComponent],
   imports: [
@@ -16,8 +15,8 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     FormsModule
   ],
-  exports:[
-    MainNavComponent, PropertyInputFormularComponent 
+  exports: [
+    MainNavComponent, PropertyInputFormularComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

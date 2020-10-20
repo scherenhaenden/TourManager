@@ -45,8 +45,8 @@ export class VenueInformationComponent implements OnInit {
     this.venuewsModels[propertyToUpdate.toLocaleLowerCase()] = value;
   }
 
-  public async saveInsertedInfo(): Promise<void>{    
-    var resilt = this.venuesService.addNewVenue(this.venuewsModels);
+  public async saveInsertedInfo(): Promise<void>{
+    const resilt = this.venuesService.addNewVenue(this.venuewsModels);
   }
 }
 

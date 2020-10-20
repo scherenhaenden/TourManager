@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { VenuesModels } from '../models/venues/venues-model';
-import { GenericApiService } from "./generic-api-service";
+import { GenericApiService } from './generic-api-service';
 
 @Injectable()
 export class VenuesService {

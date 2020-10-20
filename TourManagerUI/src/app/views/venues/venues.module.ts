@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { VenuesService } from './../../services/venues-service';
 
 
-
 @NgModule({
   declarations: [ShowVenuesComponent, VenueInformationComponent],
   imports: [

@@ -9,12 +9,11 @@ import { VenuesService } from './../../../services/venues-service';
   styleUrls: ['./show-venues.component.less']
 })
 
-export class ShowVenuesComponent implements OnInit {  
+export class ShowVenuesComponent implements OnInit {
 
 
   public listOFVenuewsModels: VenuesModels[] = [];
   public rowEntered = null;
-
 
 
   constructor(private venuesService: VenuesService) {
@@ -24,14 +23,14 @@ export class ShowVenuesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public mouseEnterRow(that : object): void{
+  public mouseEnterRow(that: object): void{
 
     this.rowEntered = that;
   }
 
-  public mouseLeaveRow(that : object): void {
+  public mouseLeaveRow(that: object): void {
 
-    if(this.rowEntered === that) {
+    if (this.rowEntered === that) {
     this.rowEntered = null;
     }
   }
@@ -45,19 +44,19 @@ export class ShowVenuesComponent implements OnInit {
 
   }
 
-  public formatTime(date: any): string {    
-    const myNewDate= this.sCdateToJsDate(date);
+  public formatTime(date: any): string {
+    const myNewDate = this.sCdateToJsDate(date);
     return myNewDate.toLocaleTimeString();
 
   }
 
 
-  public addNewVenue(): void {    
-   
+  public addNewVenue(): void {
+
   }
 
 
-  //FIXME: decouple this
+  // FIXME: decouple this
   public sCdateToJsDate(cSDate: any): Date {
     // cSDate is '2017-01-24T14:14:55.807'
     const datestr = cSDate.toString();

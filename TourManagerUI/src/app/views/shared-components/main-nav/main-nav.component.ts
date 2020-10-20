@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -12,7 +13,12 @@ export class MainNavComponent implements OnInit {
   public StateOfButtons = StateButtons;
 
 
-  constructor() { }
+  constructor(private route: Router) {
+
+    console.log('the.route', this.route.url);
+    
+
+  }
 
   ngOnInit(): void {
   }

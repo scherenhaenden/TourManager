@@ -9,50 +9,68 @@ import { VenuesService } from './../../../services/venues-service';
   styleUrls: ['./show-venues.component.less']
 })
 
-export class ShowVenuesComponent implements OnInit {
+export class ShowVenuesComponent implements OnInit {  
 
-  public venuewsModels: VenuesModels = new VenuesModels();
 
-  public listFlatModels: FlatModel[] = [];
+  public listOFVenuewsModels: VenuesModels[] = [];
+  public rowEntered = null;
+
+
 
   constructor(private venuesService: VenuesService) {
-    this.loadVenue();
+    this.loadVenues();
   }
 
   ngOnInit(): void {
   }
 
-  public loadVenue(): void {
+  public mouseEnterRow(that : object): void{
 
-    const keys = Object.keys(this.venuewsModels);
-    const keysWithoutId =  keys.filter(key => key !== 'id');
+    this.rowEntered = that;
+  }
 
-    for (const i in keysWithoutId) {
+  public mouseLeaveRow(that : object): void {
 
-      if (keysWithoutId.hasOwnProperty(i)) {
-        // code here
-        const flat = new FlatModel();
-        let name = keysWithoutId[i];
-
-        name = name.charAt(0).toUpperCase() + name.slice(1);
-        flat.propertyNameOfObject = name;
-        flat.propertyValueOfObject = this.venuewsModels[i];
-        this.listFlatModels.push(flat);
-      }
+    if(this.rowEntered === that) {
+    this.rowEntered = null;
     }
   }
 
-  public updateValue(value: string, propertyToUpdate: string): void {
+  public async loadVenues(): Promise<void>  {
 
-    this.venuewsModels[propertyToUpdate.toLocaleLowerCase()] = value;
+    const value = await this.venuesService.showvenues<VenuesModels[]>();
+    this.listOFVenuewsModels = value;
+
+    console.log('myInfo', value);
+
   }
 
-  public async saveInsertedInfo(): Promise<void>{    
-    var resilt = this.venuesService.addNewVenue(this.venuewsModels);
+  public formatTime(date: any): string {    
+    const myNewDate= this.sCdateToJsDate(date);
+    return myNewDate.toLocaleTimeString();
+
   }
+
+
+  public addNewVenue(): void {    
+   
+  }
+
+
+  //FIXME: decouple this
+  public sCdateToJsDate(cSDate: any): Date {
+    // cSDate is '2017-01-24T14:14:55.807'
+    const datestr = cSDate.toString();
+    const dateAr = datestr.split('-');
+    const year = parseInt(dateAr[0]);
+    const month = parseInt(dateAr[1]) - 1;
+    const day = parseInt(dateAr[2].substring(0, dateAr[2].indexOf('T')));
+    const timestring = dateAr[2].substring(dateAr[2].indexOf('T') + 1);
+    const timeAr = timestring.split(':');
+    const hour = parseInt(timeAr[0]);
+    const min = parseInt(timeAr[1]);
+    const sek = parseInt(timeAr[2]);
+    const date = new Date(year, month, day, hour, min, sek, 0);
+    return date;
 }
-
-export class FlatModel{
-  public propertyNameOfObject: string;
-  public propertyValueOfObject: string;
 }

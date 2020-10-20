@@ -1,16 +1,43 @@
-<div class="row">
-   <div class="container-fluid">
-      <div class="row form-group">
-         <div class="col-md-12">
-            <ng-container *ngFor="let item of listFlatModels; index as i;">
-               <div class="row ml-0 mr-0">
-                  <app-property-input-formular class=" w-100 ml-0 mr-0 mt-1 mb-1" [propertyName]="item.propertyNameOfObject" [propertyValue]="item.propertyValueOfObject"
-                  (propertyValueEmit)="updateValue($event,item.propertyNameOfObject)"
-                  ></app-property-input-formular>
+<div class="row h-100">
+<div class="container-fluid">
+<div class="row form-group h-100">
+   <div class="col-md-12">
+      <div class="row m-0 h-100 d-inline-block w-100" >
+         <div class="" >
+            <table class="table scroballbar-table">
+               <thead>
+                  <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Name</th>
+                     <th scope="col">Address</th>
+                     <th scope="col">Number</th>
+                     <th scope="col">contactPersons</th>
+                     <th scope="col">Load In</th>
+                     <th scope="col">Curf View</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <ng-container *ngFor="let item of listOFVenuewsModels; index as i;">
+                     <tr 
+                     (mouseenter)="mouseEnterRow(i);" 
+                     (mouseleave) ="mouseLeaveRow(i);"                        
+                     [ngClass]="{'myback': rowEntered === i }"
+                     >
+                     <th scope="row">{{i}}</th>
+                     <td >{{item.name}}</td>
+                     <td >{{item.address}}</td>
+                     <td >{{item.number}}</td>
+                     <td >{{item.contactPersons}}</td>
+                     <td >{{formatTime(item.loadIn)}}</td>
+                     <td >{{formatTime(item.curfView)}}</td>
+                     </tr>
+                  </ng-container>
+               </tbody>
+            </table>
+            <div>
+               <div class="row">
+                  <button type="button" class="btn btn-primary" (click)="addNewVenue()" >Add</button>	             
                </div>
-            </ng-container>
-            <div class="row">
-               <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Save</button>	
             </div>
          </div>
       </div>

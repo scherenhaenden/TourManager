@@ -9,6 +9,7 @@ export class PropertyInputFormularComponent implements OnInit {
 
   @Input() propertyName = '';
   @Input() propertyValue = '';
+  @Input() type = '';
   @Output() propertyValueEmit: EventEmitter<string> =   new EventEmitter();
 
   constructor() { }
@@ -19,5 +20,31 @@ export class PropertyInputFormularComponent implements OnInit {
   public updateValue($event: any): void {
 
     this.propertyValueEmit.emit(this.propertyValue);
+  }
+
+  public getType(): string {
+
+    if(this.type !== '' ) {
+
+      if(this.type === 'string') {
+
+        return 'text';
+
+      }
+
+      //FIXME: Check this later
+      console.log('unknown type', this.type);
+      return this.type;
+
+      
+     
+
+    }
+
+    
+
+    return 'text';
+    
+
   }
 }

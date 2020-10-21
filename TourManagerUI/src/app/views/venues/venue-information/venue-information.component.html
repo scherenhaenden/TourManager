@@ -6,11 +6,17 @@
                <div class="row ml-0 mr-0">
                   <app-property-input-formular class=" w-100 ml-0 mr-0 mt-1 mb-1" [propertyName]="item.propertyNameOfObject" [propertyValue]="item.propertyValueOfObject"
                   (propertyValueEmit)="updateValue($event,item.propertyNameOfObject)"
-                  ></app-property-input-formular>
+                  [type]="item.propertyValueOType" 
+                  
+                  >
+                  </app-property-input-formular>
                </div>
             </ng-container>
             <div class="row">
+               <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Edit</button>	
                <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Save</button>	
+               <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Cancel</button>	               
+               <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Delete</button>	               
             </div>
          </div>
       </div>

@@ -32,6 +32,13 @@ export class VenueInformationComponent implements OnInit {
         const flat = new FlatModel();
         let name = keysWithoutId[i];
 
+        let type  = (typeof this.venuewsModels[name]).toString();
+        if (type === 'object') {
+          if ((this.venuewsModels[name] instanceof Date) ) {
+            type = 'time';
+          }
+        }
+        flat.propertyValueOType = type;
         name = name.charAt(0).toUpperCase() + name.slice(1);
         flat.propertyNameOfObject = name;
         flat.propertyValueOfObject = this.venuewsModels[i];
@@ -53,4 +60,5 @@ export class VenueInformationComponent implements OnInit {
 export class FlatModel{
   public propertyNameOfObject: string;
   public propertyValueOfObject: string;
+  public propertyValueOType: string;
 }

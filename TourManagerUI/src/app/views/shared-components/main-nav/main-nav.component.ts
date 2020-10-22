@@ -54,8 +54,7 @@ export class MainNavComponent implements OnInit {
   }
 
   public changeRouterNaveState(url: string): void {
-
-    console.log('minimi', url);
+    
     if(url.includes('venues')) {
 
       this.currentState = StateButtons.Venues;
@@ -69,6 +68,7 @@ export enum StateButtons {
   UserInformation,
   Summary,
   Venues,
-  Days
+  Days,
+  Contacts,
 
 }

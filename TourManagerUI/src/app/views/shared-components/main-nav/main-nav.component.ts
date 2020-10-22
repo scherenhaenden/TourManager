@@ -32,11 +32,10 @@ export class MainNavComponent implements OnInit {
           console.log(event.error);
       }
       else{
-        console.log('router event:', event);
+        // Fixme: change this
       }
   });
-
-    console.log('the.route', this.router.url);
+    
     
 
   }

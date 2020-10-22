@@ -22,4 +22,25 @@ export class VenuesService {
 
         return this.genericApiService.GenericPost(url, null).toPromise();
     }
+
+    public async getVenueInformation<T>(id: number): Promise<T> {
+
+        const url = './apipublic/venues/GetVenuewInformation/?id=' + id;
+
+        return this.genericApiService.GenericGet<T>(url).toPromise();
+    }
+
+    public async deleteVenue<T>(id: number): Promise<T> {
+
+        const url = './apipublic/venues/DeleteVenue/?id=' + id;
+
+        return this.genericApiService.GenericGet<T>(url).toPromise();
+    }
+
+    public async updateVenue(venuewsModels: VenuesModels): Promise<any> {
+
+        const url = './apipublic/venues/UpdateVenue/';
+
+        this.genericApiService.GenericPost(url, venuewsModels).toPromise();
+    }
 }

@@ -21,11 +21,11 @@ export class ShowVenuesComponent implements OnInit {
   constructor(private venuesService: VenuesService
             , private router: Router
 
-              ) {
-    this.loadVenues();
+              ) {    
   }
 
   ngOnInit(): void {
+    this.loadVenues();
   }
 
   public mouseEnterRow(that: object): void{
@@ -56,8 +56,26 @@ export class ShowVenuesComponent implements OnInit {
 
   public addNewVenue(): void {
 
-     this.router.navigate(['./edit-venues']);
+     this.router.navigate(['./venues/summary']);
   }
+
+  public selectVenewToEdit(item: any): void {
+
+
+    const itemToEdit = this.listOFVenuewsModels
+                  .filter(x => x.name === item)[0];
+
+
+    const valueId = itemToEdit.id;
+
+    this.router.navigate(['./venues/summary/' + valueId]);
+    console.log('item', item);
+
+
+  }
+
+
+
 
   // FIXME: decouple this
   public sCdateToJsDate(cSDate: any): Date {

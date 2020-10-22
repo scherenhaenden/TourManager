@@ -8,6 +8,7 @@ import { SharedComponentsModule } from './views/shared-components/shared-compone
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GenericApiService } from './services/generic-api-service';
+import { ContactsModule } from './views/contacts/contacts.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GenericApiService } from './services/generic-api-service';
     NgbModule,
     SharedComponentsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ContactsModule
   ],
   providers: [GenericApiService],
   bootstrap: [AppComponent],

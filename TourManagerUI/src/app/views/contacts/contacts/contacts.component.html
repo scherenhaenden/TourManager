@@ -8,16 +8,15 @@
                <thead>
                   <tr>
                      <th scope="col">#</th>
-                     <th scope="col">Name</th>
-                     <th scope="col">Address</th>
-                     <th scope="col">Number</th>
-                     <th scope="col">contactPersons</th>
-                     <th scope="col">Load In</th>
-                     <th scope="col">Curf View</th>
+                     <th scope="col">Firstname</th>
+                     <th scope="col">Lastname</th>
+                     <th scope="col">Telefon</th>
+                     <th scope="col">Email</th>
+                     <th scope="col">Address</th>                     
                   </tr>
                </thead>
                <tbody>
-                  <ng-container *ngFor="let item of listOFVenuewsModels; index as i;">
+                  <ng-container *ngFor="let item of listOfEntites; index as i;">
                      <tr 
                      (mouseenter)="mouseEnterRow(i);" 
                      (mouseleave) ="mouseLeaveRow(i);"                        
@@ -25,19 +24,18 @@
                      (click)="selectVenewToEdit(item.name);"
                      >
                      <th scope="row">{{i}}</th>
-                     <td >{{item.name}}</td>
+                     <td >{{item.firstName}}</td>
+                     <td >{{item.lastName}}</td>
+                     <td >{{item.telefonNummer}}</td>                     
+                     <td >{{item.email}}</td>
                      <td >{{item.address}}</td>
-                     <td >{{item.number}}</td>
-                     <td >{{item.contactPersons}}</td>
-                     <td >{{formatTime(item.loadIn)}}</td>
-                     <td >{{formatTime(item.curfView)}}</td>
                      </tr>
                   </ng-container>
                </tbody>
             </table>
             <div>
                <div class="row">
-                  <button type="button" class="btn btn-primary" (click)="addNewVenue()" >Add</button>	             
+                  <button type="button" class="btn btn-primary" (click)="addNew()" >Add</button>	             
                </div>
             </div>
          </div>

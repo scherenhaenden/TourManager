@@ -20,8 +20,16 @@
          <a class="nav-link"
          [ngClass]="{'active': currentState == StateOfButtons.Venues }"
           id="profile-tab" data-toggle="tab" role="tab" aria-controls="profile" aria-selected="false"
-          [routerLink]="" 
+          [routerLink]="['./venues']" 
           >Venues</a>
+      </li>
+      <li class="nav-item" role="presentation" (click)="menuClicked( StateOfButtons.Contacts );">
+         <a class="nav-link"
+         [ngClass]="{'active': currentState == StateOfButtons.Contacts }"
+          id="contact-tab" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="false"
+          [routerLink]="['./contacts']" 
+          
+          >Contacts</a>
       </li>
       <li class="nav-item" role="presentation" (click)="menuClicked( StateOfButtons.Days );">
          <a class="nav-link"

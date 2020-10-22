@@ -7,12 +7,15 @@ import { VenueInformationComponent } from './views/venues/venue-information/venu
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/venues' },
-  { path: 'venues', component: ShowVenuesComponent  },  
+  { path: 'venues', component: ShowVenuesComponent  },
   { path: 'venues/summary', component: VenueInformationComponent  },
   { path: 'venues/summary/:id', component: VenueInformationComponent  },
   { path: 'contacts', component: ContactsComponent  },
   { path: 'contacts/summary', component: SummaryComponent  },
   { path: 'contacts/summary/:id', component: SummaryComponent  },
+  { path: '', pathMatch: 'full', redirectTo: '/show-venues' },
+  { path: 'show-venues', component: ShowVenuesComponent  },
+  { path: 'edit-venues', component: VenueInformationComponent  },
 ];
 
 @NgModule({

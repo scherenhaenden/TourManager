@@ -21,7 +21,7 @@ export class VenueInformationComponent implements OnInit {
   constructor(private venuesService: VenuesService
             , private activatedRoute: ActivatedRoute
             , private router: Router) {
-              this.loadInformation();        
+              this.loadInformation();
   }
 
   ngOnInit(): void {
@@ -29,13 +29,13 @@ export class VenueInformationComponent implements OnInit {
 
   public async loadInformation(): Promise<void> {
 
-    this.activatedRoute.queryParams.subscribe(params => {      
+    this.activatedRoute.queryParams.subscribe(params => {
 
-      this.currentVenewId = this.activatedRoute.snapshot.params['id'];
+      this.currentVenewId = this.activatedRoute.snapshot.params.id;
 
       const myValues =  this.venuesService.getVenueInformation<VenuesModels>(this.currentVenewId);
 
-      (async () => { //no async keyword here
+      (async () => { // no async keyword here
         try {
           const result = await myValues;
 
@@ -54,15 +54,11 @@ export class VenueInformationComponent implements OnInit {
       })();
 
 
-
-
       console.log('myvalues', myValues);
-      
-      
+
+
     });
 
-
-   
 
   }
 
@@ -71,18 +67,18 @@ export class VenueInformationComponent implements OnInit {
     const keys = Object.keys(this.venuewsModelEmpty);
     const keysWithoutId =  keys.filter(key => key !== 'id');
 
-    console.log('flatt up', (this.venuewsModels))
-    console.log('flatt keys', (keys))
-    console.log('flatt keysWithoutId', (keysWithoutId))
-    //console.log('flatt object', (type))
-    console.log('flatt name', (name))
+    console.log('flatt up', (this.venuewsModels));
+    console.log('flatt keys', (keys));
+    console.log('flatt keysWithoutId', (keysWithoutId));
+    // console.log('flatt object', (type))
+    console.log('flatt name', (name));
 
     for (const i in keysWithoutId) {
 
       if (keysWithoutId.hasOwnProperty(i)) {
         // code here
         const flat = new FlatModel();
-        let name = keysWithoutId[i];
+        const name = keysWithoutId[i];
 
         let type  = (typeof this.venuewsModelEmpty[name]).toString();
         if (type === 'object') {
@@ -95,27 +91,26 @@ export class VenueInformationComponent implements OnInit {
             flat.propertyValueOfObject = final;
 
             type =  'time';
-            
-           
+
+
           }
           else{
             flat.propertyValueOfObject = this.venuewsModels[name];
 
           }
-          
+
         }
         else{
           flat.propertyValueOfObject = this.venuewsModels[name];
         }
         flat.propertyValueOType = type;
         const upperName = name.charAt(0).toUpperCase() + name.slice(1);
-        //name = name.charAt(0).toUpperCase() + name.slice(1);
+        // name = name.charAt(0).toUpperCase() + name.slice(1);
         flat.propertyNameOfObject = upperName;
         console.log('myreal value', name);
         console.log('myreal value', this.venuewsModels[name]);
 
-        
-     
+
         this.listFlatModels.push(flat);
 
         console.log('myreal value flat', this.listFlatModels);
@@ -130,18 +125,18 @@ export class VenueInformationComponent implements OnInit {
 
   public async saveInsertedInfo(): Promise<void>{
 
-    if(this.currentVenewId === null) {
+    if (this.currentVenewId === null) {
       const resilt = this.venuesService.addNewVenue(this.venuewsModels);
       return;
     }
 
     const resilt = this.venuesService.updateVenue(this.venuewsModels);
-    
+
   }
 
   public deleteVenue(): void {
 
-    if(this.currentVenewId!== null) {
+    if (this.currentVenewId !== null) {
       this.venuesService.deleteVenue(this.currentVenewId);
       this.router.navigate(['./venues/']);
     }

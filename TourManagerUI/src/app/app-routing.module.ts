@@ -7,7 +7,7 @@ import { VenueInformationComponent } from './views/venues/venue-information/venu
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/venues' },
-  { path: 'venues', component: ShowVenuesComponent  },  
+  { path: 'venues', component: ShowVenuesComponent  },
   { path: 'venues/summary', component: VenueInformationComponent  },
   { path: 'venues/summary/:id', component: VenueInformationComponent  },
   { path: 'contacts', component: ContactsComponent  },

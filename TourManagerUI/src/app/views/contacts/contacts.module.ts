@@ -8,7 +8,6 @@ import { SharedComponentsModule } from '../shared-components/shared-components.m
 import { SummaryComponent } from './summary/summary.component';
 
 
-
 @NgModule({
   declarations: [ContactsComponent, SummaryComponent],
   imports: [

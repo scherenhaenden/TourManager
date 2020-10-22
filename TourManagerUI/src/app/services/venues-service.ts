@@ -30,8 +30,6 @@ export class VenuesService {
         return this.genericApiService.GenericGet<T>(url).toPromise();
     }
 
-
-
     public async deleteVenue<T>(id: number): Promise<T> {
 
         const url = './apipublic/venues/DeleteVenue/?id=' + id;

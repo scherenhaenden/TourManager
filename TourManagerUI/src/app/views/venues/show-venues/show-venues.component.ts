@@ -21,8 +21,7 @@ export class ShowVenuesComponent implements OnInit {
   constructor(private venuesService: VenuesService
             , private router: Router
 
-              ) {
-    
+              ) {    
   }
 
   ngOnInit(): void {

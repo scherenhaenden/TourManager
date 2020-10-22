@@ -21,15 +21,7 @@ export class VenueInformationComponent implements OnInit {
   constructor(private venuesService: VenuesService
             , private activatedRoute: ActivatedRoute
             , private router: Router) {
-
-
-              this.loadInformation();
-
-          
-
-
-
-              //this.loadVenue();
+              this.loadInformation();        
   }
 
   ngOnInit(): void {
@@ -38,8 +30,6 @@ export class VenueInformationComponent implements OnInit {
   public async loadInformation(): Promise<void> {
 
     this.activatedRoute.queryParams.subscribe(params => {      
-
-      
 
       this.currentVenewId = this.activatedRoute.snapshot.params['id'];
 

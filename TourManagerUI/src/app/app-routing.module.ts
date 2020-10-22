@@ -4,9 +4,10 @@ import { ShowVenuesComponent } from './views/venues/show-venues/show-venues.comp
 import { VenueInformationComponent } from './views/venues/venue-information/venue-information.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/show-venues' },
-  { path: 'show-venues', component: ShowVenuesComponent  },
-  { path: 'edit-venues', component: VenueInformationComponent  },
+  { path: '', pathMatch: 'full', redirectTo: '/venues' },
+  { path: 'venues', component: ShowVenuesComponent  },  
+  { path: 'venues/summary', component: VenueInformationComponent  },
+  { path: 'venues/summary/:id', component: VenueInformationComponent  },
 ];
 
 @NgModule({

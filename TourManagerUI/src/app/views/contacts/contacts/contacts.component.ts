@@ -51,4 +51,21 @@ export class ContactsComponent implements OnInit {
     }
   }
 
+
+  public selectVenewToEdit(item: any): void {
+
+
+    /*const itemToEdit = this.listOFVenuewsModels
+                  .filter(x => x.name === item)[0];
+
+
+    const valueId = itemToEdit.id;
+
+    this.router.navigate(['./venues/summary/' + valueId]);
+    console.log('item', item);*/
+
+
+  }
+
+
 }

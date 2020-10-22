@@ -1,8 +1,12 @@
 # TourManager
 
-# Development
+App created to help tourmanagers with their tour data related, such as venues, contacts, current tours and its dates. 
 
-## Migrations
 
-For new migrations from the Data directory 'dotnet ef --startup-project ../TourManagerBackEnd/  migrations add AddContacts --verbose
-'
+# Features
+
+the tool is still under development 
+
+
+# How to use it.
+-Clone it and run build-app.sh

@@ -13,6 +13,9 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsComponent  },
   { path: 'contacts/summary', component: SummaryComponent  },
   { path: 'contacts/summary/:id', component: SummaryComponent  },
+  { path: '', pathMatch: 'full', redirectTo: '/show-venues' },
+  { path: 'show-venues', component: ShowVenuesComponent  },
+  { path: 'edit-venues', component: VenueInformationComponent  },
 ];
 
 @NgModule({

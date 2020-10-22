@@ -21,6 +21,8 @@ namespace TourManagerBackEnd.Controllers
             _tourManagerContext = tourManagerContext;            
         }        
         
+        
+        
         [AllowAnonymous]
         [HttpPost]
         [Route("showvenues")]
@@ -41,8 +43,7 @@ namespace TourManagerBackEnd.Controllers
             Venues.curfView = DateTime.Now;
             Venues.loadIn = DateTime.Now;
             Venues.Name = values.Name;
-            Venues.TelefonNumber = values.Number;            
-
+            Venues.TelefonNumber = values.Number;                        
             _tourManagerContext.Venues.Add(Venues);
             _tourManagerContext.SaveChanges();
             return values;

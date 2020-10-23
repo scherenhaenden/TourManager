@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\TourManagerLogic\TourManagerLogic.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="electron.manifest.json">

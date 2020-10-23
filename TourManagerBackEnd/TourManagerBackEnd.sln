@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerBackEnd", "TourManagerBackEnd\TourManagerBackEnd.csproj", "{AF4BB4D4-E81A-433D-A0CD-F469EEEFF516}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerWeb", "TourManagerWeb\TourManagerWeb.csproj", "{AF4BB4D4-E81A-433D-A0CD-F469EEEFF516}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{09C121B1-FED8-49D1-9277-F7218D179023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerLogic", "TourManagerLogic\TourManagerLogic.csproj", "{6F30CCA8-273A-481E-BB01-8565749EFF09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,9 @@ Global
 		{09C121B1-FED8-49D1-9277-F7218D179023}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C121B1-FED8-49D1-9277-F7218D179023}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C121B1-FED8-49D1-9277-F7218D179023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

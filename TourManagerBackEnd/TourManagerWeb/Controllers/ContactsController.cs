@@ -4,6 +4,8 @@ using Data.Core.Configuration;
 using Data.Core.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TourManagerLogic.ApiModels;
+using TourManagerLogic.Core.Api;
 using TourManagerWeb.ApiModels;
 
 namespace TourManagerWeb.Controllers
@@ -13,12 +15,14 @@ namespace TourManagerWeb.Controllers
     public class ContactsController : ControllerBase
     {
         private readonly TourManagerContext _tourManagerContext;
+        private CustomersApi _customersApi; 
 
         public ContactsController(
             TourManagerContext tourManagerContext
         )
         {
-            _tourManagerContext = tourManagerContext;            
+            _tourManagerContext = tourManagerContext;
+            _customersApi = new CustomersApi(_tourManagerContext);
         }     
         
         
@@ -27,28 +31,7 @@ namespace TourManagerWeb.Controllers
         [Route("Add")]
         public dynamic Add(ContactsModel values)
         {
-            try
-            {
-                var contacts = new Contacts();
-
-                contacts.Address = values.Address;
-                contacts.Email = values.Email;
-                contacts.FirstName = values.FirstName;
-                contacts.LastName = values.LastName;
-                contacts.TelefonNumber = values.TelefonNumber;
-
-                _tourManagerContext.Contacts.Add(contacts);
-                _tourManagerContext.SaveChanges();
-                return values;
-            }
-            catch (Exception ex)
-            {
-                return ex.StackTrace;
-            }
-
-             
-
-            
+            _customersApi.Add(values);
         }
         
         [AllowAnonymous]

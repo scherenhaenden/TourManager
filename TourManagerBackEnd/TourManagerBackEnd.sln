@@ -1,10 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerWeb", "TourManagerWeb\TourManagerWeb.csproj", "{AF4BB4D4-E81A-433D-A0CD-F469EEEFF516}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerWeb", "TourManagerWeb\TourManagerWeb.csproj", "{AF4BB4D4-E81A-433D-A0CD-F469EEEFF516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{09C121B1-FED8-49D1-9277-F7218D179023}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{09C121B1-FED8-49D1-9277-F7218D179023}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerLogic", "TourManagerLogic\TourManagerLogic.csproj", "{6F30CCA8-273A-481E-BB01-8565749EFF09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerLogic", "TourManagerLogic\TourManagerLogic.csproj", "{6F30CCA8-273A-481E-BB01-8565749EFF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerDesktopV2", "TourManagerDesktopV2\TourManagerDesktopV2.csproj", "{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDektop3", "AvaloniaDektop3\AvaloniaDektop3.csproj", "{A47D8CF2-2FA2-491E-B13F-764486F40BAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,19 @@ Global
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D39932E-AF99-4C27-94B7-8BCC28E58D65}
 	EndGlobalSection
 EndGlobal

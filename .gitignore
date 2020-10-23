@@ -29,3 +29,4 @@ AppDir/
 hwapp-x86_64.AppImage
 appimagetool-x86_64.AppImage
 TourManagerBackEnd/TourManagerWeb/TourManager.db
+TourManagerBackEnd/.vs/

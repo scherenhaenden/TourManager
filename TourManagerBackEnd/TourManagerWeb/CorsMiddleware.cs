@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 
-namespace TourManagerBackEnd
+namespace TourManagerWeb
 {
     public class CorsMiddleware
     {

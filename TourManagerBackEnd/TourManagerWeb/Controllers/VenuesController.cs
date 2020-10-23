@@ -4,9 +4,9 @@ using Data.Core.Configuration;
 using Data.Core.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TourManagerBackEnd.ApiModels;
+using TourManagerWeb.ApiModels;
 
-namespace TourManagerBackEnd.Controllers
+namespace TourManagerWeb.Controllers
 {
     [ApiController]
     [Route("apipublic/[controller]")]
@@ -28,7 +28,14 @@ namespace TourManagerBackEnd.Controllers
         [Route("showvenues")]
         public dynamic ShowVenues()
         {
-            return _tourManagerContext.Venues.ToList();
+            try
+            {
+                return _tourManagerContext.Venues.ToList();
+            }
+            catch (Exception ex)
+            {
+                return ex.StackTrace;
+            }
         }
 
         [AllowAnonymous]

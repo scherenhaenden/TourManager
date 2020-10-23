@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 
-namespace TourManagerBackEnd
+namespace TourManagerWeb
 {
     public static class CorsMiddlewareExtensions
     {

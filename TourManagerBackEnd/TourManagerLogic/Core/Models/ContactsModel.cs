@@ -1,4 +1,4 @@
-namespace TourManagerBackEnd.ApiModels
+namespace TourManagerWeb.ApiModels
 {
     public class ContactsModel
     {

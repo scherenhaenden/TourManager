@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TourManagerMultiUI.Shared.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,7 @@ namespace TourManagerMultiUI
         public MainPage()
         {
             this.InitializeComponent();
+            DataContext = new ViewModelBase();
         }
     }
 }

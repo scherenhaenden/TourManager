@@ -8,6 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
+
+      <Button Content="Button" Command="{Binding ClickCommand}" />
+        
+		<TextBlock Text="{Binding Path=Name2}" Margin="20" FontSize="30" />
+        <Button></Button>
     </Grid>
 </Page>

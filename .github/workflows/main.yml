@@ -24,19 +24,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
             node-version: '12'
-
-      # Runs a single command using the runners shell
-      - name: install packages
-      - run: npm install
-        
-      - name: intall angular        
-      - run: npm install -g @angular/cli > /dev/null
-        
-      - name: run-script
-      - run: sh ./build-app.sh
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          npm install,
+          npm install -g @angular/cli > /dev/null,
+          sh ./build-app.sh
+          

@@ -26,7 +26,7 @@ namespace TourManagerMultiUI
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = new ViewModelBase();
+            DataContext = new MainPageViewModel();
         }
     }
 }

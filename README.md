@@ -13,3 +13,5 @@ the tool is still under development
 -Read development.md
 
 
+# How to use it.
+-Clone it and run build-app.sh

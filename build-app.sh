@@ -1,5 +1,5 @@
 #Build Angular app
-ls
+mkdir ./TourManagerBackEnd/TourManagerWeb/wwwroot/ 
 
 cd ./TourManagerUI/
 npm install

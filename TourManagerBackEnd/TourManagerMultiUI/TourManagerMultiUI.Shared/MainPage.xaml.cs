@@ -28,5 +28,10 @@ namespace TourManagerMultiUI
             this.InitializeComponent();
             DataContext = new MainPageViewModel();
         }
+        
+        public void GoNextClick(object sender, RoutedEventArgs e)
+        {
+            (DataContext as MainPageViewModel)?.Next();
+        }
     }
 }

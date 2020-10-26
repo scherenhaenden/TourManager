@@ -18,6 +18,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Shared\NavBarMenuViewModel.cs" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Shared" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -38,5 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Views\Shared\NavBarMenu.xaml" />
   </ItemGroup>
 </Project>

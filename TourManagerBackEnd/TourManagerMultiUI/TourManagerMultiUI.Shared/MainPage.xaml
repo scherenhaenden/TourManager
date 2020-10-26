@@ -41,61 +41,10 @@
             Grid.Row="0" />
 
         <StackPanel Grid.Column="1" Grid.Row="0">
-            <Grid Background="Gainsboro" Margin="1">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-
-
-                <Button
-                    Content="User Information"
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}"
-                    Width="Auto" />
-                <Button
-                    Content="Summary"
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}" />
-                <Button
-                    Content="Venues"
-                    Grid.Column="2"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}" />
-                <Button
-                    Content="Col0Row1:"
-                    Grid.Column="3"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}" />
-                <Button
-                    Content="Contacts"
-                    Grid.Column="4"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}" />
-                <Button
-                    Content="Days"
-                    Grid.Column="5"
-                    Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource TextBlockButtonStyle}" />
-            </Grid>
+            <Frame Source="./Views/Shared/NavBarMenu.xaml" />
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="0">
+            <Frame Source="./Views/Shared/NavBarMenu.xaml" />
         </StackPanel>
     </Grid>
 </Page>

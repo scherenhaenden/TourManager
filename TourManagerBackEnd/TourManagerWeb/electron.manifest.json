@@ -4,7 +4,7 @@
     "imageFile": ""
   },
   "name": "TourManagerBackEnd",
-  "author": "",
+  "author": "John Doe <john@doe.com>",
   "singleInstance": false,
   "aspCoreBackendPort": 9823,
   "environment": "Production",
@@ -12,8 +12,11 @@
     "appId": "com.TourManagerBackEnd.app",
     "productName": "TourManagerBackEnd",
     "copyright": "Copyright © 2020",
-    "buildVersion": "1.0.0",
-    "compression": "maximum",
+    "buildVersion": "0.0.1",
+    "compression": "maximum",    
+    "linux": {
+      "target":"zip"
+    },
     "directories": {
       "output": "../../../bin/Desktop"
     },

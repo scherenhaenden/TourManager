@@ -1,4 +1,6 @@
 #Build Angular app
+ls
+
 cd ./TourManagerUI/
 npm install
 npm install -g @angular/cli > /dev/null

@@ -2,7 +2,7 @@ using ElectronNET.API;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace TourManagerBackEnd
+namespace TourManagerWeb
 {
     public class Program
     {

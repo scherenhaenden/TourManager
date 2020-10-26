@@ -8,12 +8,11 @@ namespace Data.Core.Configuration
     {
         public DbSet<Venues> Venues { get; set; }
         public DbSet<Contacts> Contacts { get; set; }
-
         public TourManagerContext (DbContextOptions<TourManagerContext> options) : base(options)
         {
             Database.Migrate();
         }
-        
+        //FIMXE: pay technical deb
         /*public TourManagerContext () : base()
         {
             Database.Migrate();
@@ -33,5 +32,6 @@ namespace Data.Core.Configuration
             return exePath;
 
         }
+        
     }
 }

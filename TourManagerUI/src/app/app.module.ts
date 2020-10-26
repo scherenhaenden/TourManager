@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { GenericApiService } from './services/generic-api-service';
 import { ContactsModule } from './views/contacts/contacts.module';
+import { StatusViewModule } from './views/status-view/status-view.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactsModule } from './views/contacts/contacts.module';
     SharedComponentsModule,
     RouterModule,
     HttpClientModule,
-    ContactsModule
+    ContactsModule,
+    StatusViewModule
   ],
   providers: [GenericApiService],
   bootstrap: [AppComponent],

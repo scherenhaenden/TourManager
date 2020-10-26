@@ -6,6 +6,7 @@
   "name": "TourManagerBackEnd",
   "author": "",
   "singleInstance": false,
+  "aspCoreBackendPort": 9823,
   "environment": "Production",
   "build": {
     "appId": "com.TourManagerBackEnd.app",

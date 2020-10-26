@@ -35,8 +35,6 @@ export class MainNavComponent implements OnInit {
         // Fixme: change this
       }
   });
-    
-    
 
   }
 

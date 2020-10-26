@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerDesktopV2", "Tou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDektop3", "AvaloniaDektop3\AvaloniaDektop3.csproj", "{A47D8CF2-2FA2-491E-B13F-764486F40BAD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd.Gtk", "TourManagerBackEnd.Gtk\TourManagerBackEnd.Gtk.csproj", "{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd.Mac", "TourManagerBackEnd.Mac\TourManagerBackEnd.Mac.csproj", "{1C707453-0000-437C-9C14-12CA206ADE4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd.Wpf", "TourManagerBackEnd.Wpf\TourManagerBackEnd.Wpf.csproj", "{BA366B53-D46C-4616-8040-8A67877EF406}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd", "TourManagerBackEnd\TourManagerBackEnd.csproj", "{502D06E9-99B2-4D55-92AC-007495C94368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +47,28 @@ Global
 		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C707453-0000-437C-9C14-12CA206ADE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C707453-0000-437C-9C14-12CA206ADE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C707453-0000-437C-9C14-12CA206ADE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C707453-0000-437C-9C14-12CA206ADE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA366B53-D46C-4616-8040-8A67877EF406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA366B53-D46C-4616-8040-8A67877EF406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA366B53-D46C-4616-8040-8A67877EF406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA366B53-D46C-4616-8040-8A67877EF406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502D06E9-99B2-4D55-92AC-007495C94368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502D06E9-99B2-4D55-92AC-007495C94368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502D06E9-99B2-4D55-92AC-007495C94368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502D06E9-99B2-4D55-92AC-007495C94368}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0D39932E-AF99-4C27-94B7-8BCC28E58D65}
+		SolutionGuid = {84A159E2-A478-4B1E-AE20-6804C8CB9232}
 	EndGlobalSection
 EndGlobal

@@ -5,33 +5,31 @@ import { ApplicationRef, Component, ElementRef, EventEmitter, Input, OnInit, Out
   templateUrl: './property-input-formular.component.html',
   styleUrls: ['./property-input-formular.component.less']
 })
-//FIxME: refactor all this class
+// FIxME: refactor all this class
 export class PropertyInputFormularComponent implements OnInit {
 
 
-  @ViewChild("propertyInput", {read: ElementRef}) propertyInput: ElementRef;
+  @ViewChild('propertyInput', {read: ElementRef}) propertyInput: ElementRef;
 
   @Input() id = '';
 
-  
+
   @Input() propertyName = '';
   public propertyValueDirect: any;
 
   public _swapValue: any = '';
 public _propertyValue: any = '';
-get propertyValue(): any {  
+get propertyValue(): any {
     return this._propertyValue;
 }
 @Input() set propertyValue(value: any) {
      this._propertyValue = value;
      this._swapValue = value;
-    
+
 }
 
 
-
-
-  //@Input() propertyValue: any = '';
+  // @Input() propertyValue: any = '';
   @Input() type = '';
   @Output() propertyValueEmit: EventEmitter<string> =   new EventEmitter();
 
@@ -47,9 +45,9 @@ get propertyValue(): any {
 
   public getType(): string {
 
-    if(this.type !== '' ) {
+    if (this.type !== '' ) {
 
-      if(this.type === 'string') {
+      if (this.type === 'string') {
 
         return 'text';
 
@@ -57,32 +55,29 @@ get propertyValue(): any {
       console.log('what am i?1', this.propertyValue);
       console.log('what am i?2', this.type);
 
-      if(this.type === 'time') {
+      if (this.type === 'time') {
 
         try {
 
           console.log('_propertyValue', this._swapValue);
 
-          var final = (this._swapValue as Date).toLocaleTimeString();
+          const final = (this._swapValue as Date).toLocaleTimeString();
 
-          if(this._propertyValue !== (this._swapValue as Date).toLocaleTimeString()) {
+          if (this._propertyValue !== (this._swapValue as Date).toLocaleTimeString()) {
 
             this._propertyValue = final;
 
           }
 
 
-
-
         }
-        catch(e) {}
+        catch (e) {}
 
         return  this.type;
 
       }
 
 
-      
       console.log('my type', this.type);
       return this.type;
     }

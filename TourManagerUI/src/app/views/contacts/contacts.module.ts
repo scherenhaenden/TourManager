@@ -7,7 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedComponentsModule } from '../shared-components/shared-components.module';
 import { SummaryComponent } from './summary/summary.component';
 
-
 @NgModule({
   declarations: [ContactsComponent, SummaryComponent],
   imports: [

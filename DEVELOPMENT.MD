@@ -18,4 +18,3 @@ The project has been only tested in Ubuntu 18.04.
 For new migrations from the Data directory 'dotnet ef --startup-project ../TourManagerBackEnd/  migrations add AddContacts --verbose
 
 
-

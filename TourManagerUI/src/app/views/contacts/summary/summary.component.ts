@@ -29,6 +29,7 @@ export class SummaryComponent implements OnInit {
   }
 
 
+
   public loadVenue(): void {
 
     const keys = Object.keys(this.venuewsModelEmpty);
@@ -71,8 +72,8 @@ export class SummaryComponent implements OnInit {
   }
 
   public saveInsertedInfo(): void {
-
-    if (this.currentVenewId === null) {
+    
+    if(this.currentVenewId === null) {
       const resilt = this.contactService.add(this.venuewsModels);
       return;
     }

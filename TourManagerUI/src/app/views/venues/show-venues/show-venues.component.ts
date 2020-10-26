@@ -20,7 +20,6 @@ export class ShowVenuesComponent implements OnInit {
 
   constructor(private venuesService: VenuesService
             , private router: Router
-
               ) {
   }
 
@@ -73,8 +72,6 @@ export class ShowVenuesComponent implements OnInit {
 
 
   }
-
-
   // FIXME: decouple this
   public sCdateToJsDate(cSDate: any): Date {
     // cSDate is '2017-01-24T14:14:55.807'

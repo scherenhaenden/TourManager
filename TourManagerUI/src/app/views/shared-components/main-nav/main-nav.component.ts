@@ -36,7 +36,6 @@ export class MainNavComponent implements OnInit {
       }
   });
 
-
   }
 
   ngOnInit(): void {
@@ -53,8 +52,8 @@ export class MainNavComponent implements OnInit {
   }
 
   public changeRouterNaveState(url: string): void {
-
-    if (url.includes('venues')) {
+    
+    if(url.includes('venues')) {
 
       this.currentState = StateButtons.Venues;
 

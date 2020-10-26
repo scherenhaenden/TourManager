@@ -16,6 +16,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet: [ '3.1.x' ]
+    
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -24,13 +28,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
             node-version: '12'
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: sh ./build-app.sh
-
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: |        
+          sh ./build-app.sh
+          
+        
+          

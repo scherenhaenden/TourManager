@@ -8,5 +8,8 @@ App created to help tourmanagers with their tour data related, such as venues, c
 the tool is still under development 
 
 
-# How to use it.
--Clone it and run build-app.sh
+# Development.
+
+-Read development.md
+
+

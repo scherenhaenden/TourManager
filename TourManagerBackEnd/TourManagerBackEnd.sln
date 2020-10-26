@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerMultiUI.Skia.Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerMultiUI.Skia.Gtk", "TourManagerMultiUI\TourManagerMultiUI.Skia.Gtk\TourManagerMultiUI.Skia.Gtk.csproj", "{307AB215-D461-4C71-B46F-418BD8ECA149}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourManagerDesktopV2", "TourManagerDesktopV2\TourManagerDesktopV2.csproj", "{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaDektop3", "AvaloniaDektop3\AvaloniaDektop3.csproj", "{A47D8CF2-2FA2-491E-B13F-764486F40BAD}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd.Gtk", "TourManagerBackEnd.Gtk\TourManagerBackEnd.Gtk.csproj", "{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagerBackEnd.Mac", "TourManagerBackEnd.Mac\TourManagerBackEnd.Mac.csproj", "{1C707453-0000-437C-9C14-12CA206ADE4E}"
@@ -718,6 +722,14 @@ Global
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F30CCA8-273A-481E-BB01-8565749EFF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8B4CC4-9A53-4902-8797-E28EDD4A6D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47D8CF2-2FA2-491E-B13F-764486F40BAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC32FBB-6A5F-43BC-8E27-D8CB8FE4F2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -735,5 +747,11 @@ Global
 		{502D06E9-99B2-4D55-92AC-007495C94368}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{502D06E9-99B2-4D55-92AC-007495C94368}.Release|Any CPU.Build.0 = Release|Any CPU
 		SolutionGuid = {F59A3287-6E81-4409-A7FC-401A79862163}
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D39932E-AF99-4C27-94B7-8BCC28E58D65}
 		SolutionGuid = {84A159E2-A478-4B1E-AE20-6804C8CB9232}
 EndGlobal

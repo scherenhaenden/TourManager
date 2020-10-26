@@ -1,0 +1,50 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:TourManagerDesktopV2.ViewModels;assembly=TourManagerDesktopV2"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"         
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TourManagerDesktopV2.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="TourManagerDesktopV2"> 
+
+  <StackPanel Margin="1"   HorizontalAlignment="Center" Background="AliceBlue">
+
+    <DockPanel Background="Red">
+      <Menu DockPanel.Dock="Top">
+        <MenuItem Header="_File">
+          <MenuItem Header="_Open..."/>
+          <Separator/>
+          <MenuItem Header="_Exit"/>
+        </MenuItem>
+        <MenuItem Header="_Edit">
+          <MenuItem Header="Copy"/>
+          <MenuItem Header="Paste"/>
+        </MenuItem>
+      </Menu>
+    </DockPanel>
+    
+    
+    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto, Auto, Auto" RowDefinitions="Auto,Auto,Auto"  Margin="1"  Background="Gainsboro">      
+      
+      <Button Content="Col0Row0:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+      <Button Content="Col0Row0:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+      <Button Content="Col0Row1:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+      <Button Content="Col0Row1:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"/>
+      <Button Content="Col0Row1:" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center"/>
+      <Button Content="Col0Row1:" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center"/>      
+    </Grid>
+
+    <StackPanel>
+     
+
+
+      <Design.DataContext>
+        <vm:MainWindowViewModel/>
+      </Design.DataContext>
+      <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </StackPanel>
+
+  </StackPanel>
+</Window>
+

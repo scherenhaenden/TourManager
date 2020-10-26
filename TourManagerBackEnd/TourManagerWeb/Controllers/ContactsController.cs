@@ -32,6 +32,7 @@ namespace TourManagerWeb.Controllers
         public dynamic Add(ContactsModel values)
         {
             _customersApi.Add(values);
+            return true;
         }
         
         [AllowAnonymous]

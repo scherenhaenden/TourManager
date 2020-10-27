@@ -25,7 +25,7 @@ export class VenuesService {
 
     public async getVenueInformation<T>(id: number): Promise<T> {
 
-        const url = './apipublic/venues/GetVenuewInformation/?id=' + id;
+        const url = './apipublic/venues/VenuewInformation/?id=' + id;
 
         return this.genericApiService.GenericGet<T>(url).toPromise();
     }

@@ -1,9 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=22f2badb_002D40ea_002D47e9_002D85f7_002D2eb7b8db6090_0023TourManagerMultiUI_002EmacOS/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=307ab215_002Dd461_002D4c71_002Db46f_002D418bd8eca149_0023TourManagerMultiUI_002ESkia_002EGtk/@EntryIndexedValue">True</s:Boolean>
+	
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=a6a911d9_002D4e92_002D4866_002D8168_002Dfa702d64d8e6_0023TourManagerMultiUI_002EUWP/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=aa4fa020_002D51b5_002D4f9f_002Daff0_002Df65c477899e6_0023TourManagerMultiUI_002EDroid/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=dcdc9208_002De506_002D4913_002Db531_002Ddc4d5f82e028_0023TourManagerMultiUI_002EWasm/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=6468f869_002D1393_002D4bad_002D92b9_002D1e3c6e713632_0023TourManagerMultiUI_002ESkia_002EWpf_002EHost/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=8f45a600_002D302c_002D41ee_002D9b4b_002D5c49097abb09_0023TourManagerMultiUI_002ESkia_002EWpf/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=307ab215_002Dd461_002D4c71_002Db46f_002D418bd8eca149_0023TourManagerMultiUI_002ESkia_002EGtk/@EntryIndexedValue">True</s:Boolean>
+	
 	<s:Boolean x:Key="/Default/UnloadedProject/UnloadedProjects/=e1c93b0a_002D718e_002D47d1_002Dadc5_002D29f66eb38cd5_0023TourManagerMultiUI_002EiOS/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

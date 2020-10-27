@@ -44,6 +44,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Core\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)TestPanel.xaml" />
     <Content Include="$(MSBuildThisFileDirectory)Views\Shared\NavBarMenu.xaml" />
   </ItemGroup>
 </Project>

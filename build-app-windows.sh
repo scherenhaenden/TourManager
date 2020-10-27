@@ -21,7 +21,7 @@ fi
 cp ./TourManagerUI/dist/TourManagerUI/* ./TourManagerBackEnd/TourManagerWeb/wwwroot/ 
 cd ./TourManagerBackEnd/TourManagerWeb/
 dotnet tool install ElectronNET.CLI -g
-electronize build /target win
+electronize build //target windows
 
 #git log --tags --simplify-by-decoration --pretty="format:%ci %d"
 

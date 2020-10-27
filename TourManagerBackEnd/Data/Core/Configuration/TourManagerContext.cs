@@ -21,7 +21,7 @@ namespace Data.Core.Configuration
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {           
             var h = GetAExePath();
-            options.UseSqlite($"Data Source={h}/TourManager.db");  
+            //options.UseSqlite($"Data Source={h}/TourManager.db");  
         }
         
         //TODO: fix this

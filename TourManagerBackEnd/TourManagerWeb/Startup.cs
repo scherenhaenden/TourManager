@@ -56,8 +56,9 @@ namespace TourManagerWeb
                 configuration.RootPath = "wwwroot";
             });
             
-            var h = GetAExePath();
-            services.AddDbContext<TourManagerContext>(x => x.UseSqlite($"Data Source={h}/TourManager.db"));
+            //var h = GetAExePath();
+            services.AddDbContext<TourManagerContext>(x => x.UseSqlite($"Data Source=./TourManager.db"));
+            //services.AddDbContext<TourManagerContext>(x => x.UseSqlite($"Data Source={h}/TourManager.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

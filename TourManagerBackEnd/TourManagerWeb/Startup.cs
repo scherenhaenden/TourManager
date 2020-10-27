@@ -1,9 +1,11 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Data.Core.Configuration;
 using ElectronNET.API;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,30 @@ using TourManagerWeb.Services;
 
 namespace TourManagerWeb
 {
+    
+    public class ExceptionHandlerMiddleware
+    {
+        private readonly RequestDelegate _next;
+
+        public ExceptionHandlerMiddleware(RequestDelegate next)
+        {
+            _next = next;
+        }
+
+        public async Task InvokeAsync(HttpContext httpContext)
+        {
+            try
+            {
+                await _next(httpContext);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+        }
+    }
+    
+    
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -63,7 +89,7 @@ namespace TourManagerWeb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
             app.UseCors(builder => builder
                 .AllowAnyHeader()
                 .AllowAnyMethod()

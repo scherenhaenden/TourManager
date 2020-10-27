@@ -13,14 +13,14 @@
                </div>
             </ng-container>
             <div class="row">
-               <ng-container *ngIf="currentVenewId===null">
+               <ng-container *ngIf="currentEntityID===null">
                   <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Add New</button>	
                </ng-container>
                <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Edit</button>	
                <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Save</button>	
                <button type="button" class="btn btn-primary" (click)="saveInsertedInfo()" >Cancel</button>	
 
-               <ng-container *ngIf="currentVenewId!==null">
+               <ng-container *ngIf="currentEntityID!==null">
                   <button type="button" class="btn btn-primary" (click)="deleteVenue()" >Delete</button>	
                </ng-container>
             </div>

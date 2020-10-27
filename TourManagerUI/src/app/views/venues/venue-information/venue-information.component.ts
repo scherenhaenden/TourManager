@@ -1,4 +1,5 @@
 import { Time } from '@angular/common';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VenuesModels } from 'src/app/models/venues/venues-model';
@@ -16,24 +17,46 @@ export class VenueInformationComponent implements OnInit {
 
   public listFlatModels: FlatModel[] = [];
 
-  public currentVenewId: number;
+  public currentEntityID: number = null;
 
   constructor(private venuesService: VenuesService
             , private activatedRoute: ActivatedRoute
             , private router: Router) {
-              this.loadInformation();        
+
   }
 
   ngOnInit(): void {
+    this.getIdOfVenueInUrl();
+    //this.loadInformation();
   }
 
-  public async loadInformation(): Promise<void> {
+  public async getIdOfVenueInUrl():Promise<void> {
 
-    this.activatedRoute.queryParams.subscribe(params => {      
+    this.activatedRoute.queryParams.subscribe(params => {
 
-      this.currentVenewId = this.activatedRoute.snapshot.params['id'];
+      this.currentEntityID = this.activatedRoute.snapshot.params['id'];
 
-      const myValues =  this.venuesService.getVenueInformation<VenuesModels>(this.currentVenewId);
+      if(this.currentEntityID !== undefined) {
+
+        this.loadInformation(this.currentEntityID);
+
+      }
+
+      this.loadVenue();
+
+
+      
+    }) ;
+
+  }
+
+  public async loadInformation(id: number): Promise<void> {
+
+    this.activatedRoute.queryParams.subscribe(params => {
+
+      this.currentEntityID = this.activatedRoute.snapshot.params['id'];
+
+      const myValues =  this.venuesService.getVenueInformation<VenuesModels>(this.currentEntityID);
 
       (async () => { //no async keyword here
         try {
@@ -81,7 +104,17 @@ export class VenueInformationComponent implements OnInit {
           if ((this.venuewsModelEmpty[name] instanceof Date) ) {
 
             const value = (this.venuewsModels[name] as Date);
-            const final = this.sCdateToJsDate(value);
+
+            console.log('value time', value);
+
+            let final: Date = new Date();
+
+            try{
+              final = this.sCdateToJsDate(value);
+            }
+            catch(e){
+              final = (value);
+            }
 
             flat.propertyValueOfObject = final;
 
@@ -120,7 +153,7 @@ export class VenueInformationComponent implements OnInit {
 
   public async saveInsertedInfo(): Promise<void>{
 
-    if (this.currentVenewId === null) {
+    if (this.currentEntityID === null) {
       const resilt = this.venuesService.addNewVenue(this.venuewsModels);
       return;
     }
@@ -131,8 +164,8 @@ export class VenueInformationComponent implements OnInit {
 
   public deleteVenue(): void {
 
-    if (this.currentVenewId !== null) {
-      this.venuesService.deleteVenue(this.currentVenewId);
+    if (this.currentEntityID !== null) {
+      this.venuesService.deleteVenue(this.currentEntityID);
       this.router.navigate(['./venues/']);
     }
   }

@@ -4,7 +4,7 @@
     "imageFile": ""
   },
   "name": "TourManagerBackEnd",
-  "author": "John Doe <john@doe.com>",
+  "author": "Eddie Krill <john@doe.com>",
   "singleInstance": false,
   "aspCoreBackendPort": 9823,
   "environment": "Production",
@@ -15,7 +15,10 @@
     "buildVersion": "0.0.1",
     "compression": "maximum",    
     "linux": {
-      "target":"zip"
+      "target":["zip", "deb"]
+    },
+    "win": {
+      "target":["msi", "nsis", "nsis-web"]
     },
     "directories": {
       "output": "../../../bin/Desktop"
